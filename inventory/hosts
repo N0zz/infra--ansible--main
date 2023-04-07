@@ -1,0 +1,17 @@
+[test]
+0.0.0.0  ansible_host=kris-test-1.oracle
+
+[prod]
+0.0.0.0  ansible_host=kris-prod-1.oracle
+
+[utils]
+0.0.0.0  ansible_host=kris-utils-1.oracle
+
+
+[web_servers:children]
+test
+prod
+
+[db_servers:children]
+test
+prod

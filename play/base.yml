@@ -1,0 +1,18 @@
+- name: Base playbook to configure systems on VMs
+  hosts: all
+  gather_facts: true
+  roles:
+    - role: system
+    - role: fail2ban
+
+- name: Web playbook to configure web components on VMs
+  hosts: web_servers
+  gather_facts: true
+  roles:
+    - role: nginx
+
+- name: DB playbook to configure DB components on VMs
+  hosts: db_servers
+  gather_facts: true
+  roles:
+    - role: mysql
